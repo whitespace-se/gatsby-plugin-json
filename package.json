@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-json",
   "description": "Creates json files for your Gatsby site.",
-  "version": "3.8.0-next.1",
+  "version": "0.1.0",
   "author": "Whitespace AB <code@whitespace.se",
   "bugs": {
     "url": "https://github.com/whitespace-se/gatsby-plugin-json/issues"
