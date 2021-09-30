@@ -1,6 +1,6 @@
 # gatsby-plugin-json
 
-Create a json file (or multiple files) for your Gatsby site. This package is based on https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-feed.
+Create a json file (or multiple files) for your Gatsby site. This package is based on [gatsby-plugin-feed](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-feed).
 
 ## Install
 
