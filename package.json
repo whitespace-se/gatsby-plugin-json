@@ -2,7 +2,7 @@
   "name": "gatsby-plugin-json",
   "description": "Creates json files for your Gatsby site.",
   "version": "0.1.0",
-  "author": "Whitespace AB <code@whitespace.se",
+  "author": "Whitespace AB",
   "bugs": {
     "url": "https://github.com/whitespace-se/gatsby-plugin-json/issues"
   },
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/whitespace-se/gatsby-plugin-json"
+    "url": "git+https://github.com/whitespace-se/gatsby-plugin-json.git"
   },
   "scripts": {
     "build": "babel src --out-dir .",
