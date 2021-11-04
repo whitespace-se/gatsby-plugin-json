@@ -1,8 +1,9 @@
-Create a json file (or multiple files) for your Gatsby site. This package is based on [gatsby-plugin-feed](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-feed).
+# gatsby-plugin-json
 
+Create a json file (or multiple files) for your Gatsby site. 
 ## Install
 
-`npm install gatsby-plugin-json`
+`npm install gatsby-plugin-json` or `yarn add gatsby-plugin-json`
 
 ## How to Use
 
@@ -14,35 +15,44 @@ module.exports = {
       resolve: `gatsby-plugin-json`,
       options: {
         files: [
-          {
-            serialize: ({ query: { allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
-                return Object.assign({}, edge.node.frontmatter, {
-                  description: edge.node.excerpt,
-                  date: edge.node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  custom_elements: [{ "content:encoded": edge.node.html }],
-                })
+           {
+            output: "/packages.json",
+            serialize: ({ matomoPlugin, wordpressPlugin }) => {
+              const packages = {}
+              matomoPlugin.nodes.forEach(function (node) {
+                packages[node.name] = node
               })
+              matomoPlugin.nodes.forEach(function (node) {
+                packages[node.name] = node
+              })
+              return { packages }
             },
             query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
+          {
+            matomoPlugin: allMatomoPlugin(sort: { order: DESC, fields: lastUpdated }) {
+              nodes {
+                id
+                idPath
+                type
+                versions {
+                  download
+                  release
                 }
               }
-            `,
-            output: "/data.json",
+            }
+            wordpressPlugin: allWordpressPlugin(sort: { order: DESC, fields: lastUpdated }) {
+              nodes {
+                id
+                idPath
+                type
+                versions {
+                  download
+                  release
+                }
+              }
+            }
+          }
+          `,
           },
         ],
       },
@@ -54,3 +64,26 @@ module.exports = {
 Each file must include `output` and `query`. Additionally, it is strongly recommended to pass a custom `serialize` function, otherwise an internal serialize function will be used which may not exactly match your particular use case.
 
 _NOTE: This plugin only generates the `json` file(s) when run in `production` mode! To test your feed, run: `gatsby build && gatsby serve`._
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
+
+## Acknowledgement
+This package is based on [gatsby-plugin-feed](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-feed).
+
+## License
+
+The MIT License
+
+Copyright (c) 2021 Whitespace AB
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+---
+
+Made by [Whitespace AB](https://whitespace.se/en/) ([@whitespace-se](https://github.com/whitespace-se))
