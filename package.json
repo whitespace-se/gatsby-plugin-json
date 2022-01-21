@@ -30,7 +30,7 @@
     "gatsby-plugin",
     "json"
   ],
-  "license": "MIT",
+  "license": "AGPL",
   "main": "index.js",
   "peerDependencies": {
     "gatsby": "^4.0.0",
