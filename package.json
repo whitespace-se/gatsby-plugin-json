@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-json",
   "description": "Creates json files for your Gatsby site.",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "author": {
     "name": "Whitespace AB",
     "email": "code@whitespace.se",
@@ -14,7 +14,7 @@
     "@babel/runtime": "^7.15.4",
     "common-tags": "^1.8.0",
     "fs-extra": "^10.0.0",
-    "gatsby-plugin-utils": "^2.1.0",
+    "gatsby-plugin-utils": "^1",
     "joi": "^17.4.2",
     "lodash.merge": "^4.6.2"
   },
