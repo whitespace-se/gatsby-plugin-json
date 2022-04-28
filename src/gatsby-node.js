@@ -1,8 +1,8 @@
-import fs from 'fs-extra';
-import path from 'path';
+import fs from "fs-extra";
+import path from "path";
 
-import { defaultOptions, runQuery } from './internals';
-import pluginOptionsSchema from './plugin-options';
+import { defaultOptions, runQuery } from "./internals";
+import pluginOptionsSchema from "./plugin-options";
 
 const publicPath = `./public`;
 
@@ -26,7 +26,11 @@ exports.onPostBuild = async ({ graphql, reporter }, pluginOptions) => {
     if (!(await fs.pathExists(outputDir))) {
       await fs.mkdirp(outputDir);
     }
-    await fs.writeFile(outputPath, JSON.stringify(data));
-    reporter.success(`Generated JSON file to ${output}`);
+    // Return plain string if data variable is of type string
+    await fs.writeFile(
+      outputPath,
+      typeof data === "string" ? data : JSON.stringify(data)
+    );
+    reporter.success(`Generated file to ${output}`);
   }
 };
