@@ -10,8 +10,6 @@ export default ({ Joi }) =>
         serialize: Joi.func(),
       })
     ),
-    // query: Joi.string(),
-    // serialize: Joi.func(),
   })
     .unknown(true)
     .external(({ query }) => {
