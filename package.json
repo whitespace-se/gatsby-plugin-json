@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-json",
+  "name": "gatsby-plugin-json-v2",
   "description": "Creates json files for your Gatsby site.",
   "version": "4.0.0",
   "author": {
@@ -23,7 +23,7 @@
     "@babel/core": "^7.19.1",
     "babel-preset-gatsby-package": "^2.23.0",
     "cross-env": "^7.0.3",
-    "gatsby": "^4.23.0",
+    "gatsby": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -36,7 +36,7 @@
   "license": "AGPL",
   "main": "index.js",
   "peerDependencies": {
-    "gatsby": "^4.0.0",
+    "gatsby": "^5.0.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
