@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-plugin-json-v2",
+  "name": "gatsby-plugin-json",
   "description": "Creates json files for your Gatsby site.",
   "version": "4.0.0",
   "author": {

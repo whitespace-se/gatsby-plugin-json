@@ -19,7 +19,7 @@ export default ({ Joi }) =>
         } catch (e) {
           throw new Error(
             stripIndent`
-        Invalid plugin options for "gatsby-plugin-json-v2":
+        Invalid plugin options for "gatsby-plugin-json":
         "query" must be a valid GraphQL query. Received the error "${e.message}"`
           );
         }

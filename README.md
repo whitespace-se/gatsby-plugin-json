@@ -1,12 +1,9 @@
-# gatsby-plugin-json-v2
+# gatsby-plugin-json
 
-Create a json file (or multiple files) for your Gatsby site.
-
-This package is a fork of the original [gatsby-plugin-json](https://github.com/whitespace-se/gatsby-plugin-json#readme) which was not being maintained.
-
+Create a json file (or multiple files) for your Gatsby site. 
 ## Install
 
-`npm install gatsby-plugin-json-v2` or `yarn add gatsby-plugin-json-v2`
+`npm install gatsby-plugin-json` or `yarn add gatsby-plugin-json`
 
 ## How to Use
 
@@ -15,20 +12,20 @@ This package is a fork of the original [gatsby-plugin-json](https://github.com/w
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-json-v2`,
+      resolve: `gatsby-plugin-json`,
       options: {
         files: [
-          {
+           {
             output: "/packages.json",
             serialize: ({ matomoPlugin, wordpressPlugin }) => {
-              const packages = {};
+              const packages = {}
               matomoPlugin.nodes.forEach(function (node) {
-                packages[node.name] = node;
-              });
+                packages[node.name] = node
+              })
               matomoPlugin.nodes.forEach(function (node) {
-                packages[node.name] = node;
-              });
-              return { packages };
+                packages[node.name] = node
+              })
+              return { packages }
             },
             query: `
           {
@@ -61,7 +58,7 @@ module.exports = {
       },
     },
   ],
-};
+}
 ```
 
 Each file must include `output` and `query`. Additionally, it is strongly recommended to pass a custom `serialize` function, otherwise an internal serialize function will be used which may not exactly match your particular use case.
@@ -72,12 +69,7 @@ _NOTE: This plugin only generates the `json` file(s) when run in `production` mo
 
 See [CHANGELOG.md](CHANGELOG.md).
 
-## Issues
-
-Continue to file issues in the [original repository](https://github.com/whitespace-se/gatsby-plugin-json/issues) and tag [@justise](https://github.com/justise).
-
 ## Acknowledgement
-
 This package is based on [gatsby-plugin-feed](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-feed).
 
 ## License
