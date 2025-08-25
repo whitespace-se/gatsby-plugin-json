@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-json",
   "description": "Creates json files for your Gatsby site.",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "author": {
     "name": "Whitespace AB",
     "email": "code@whitespace.se",
@@ -14,16 +14,16 @@
     "@babel/runtime": "^7.19.0",
     "common-tags": "^1.8.2",
     "fs-extra": "^10.1.0",
-    "gatsby-plugin-utils": "^3.17.0",
+    "gatsby-plugin-utils": "^4.0.0",
     "joi": "^17.6.0",
     "lodash.merge": "^4.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
     "@babel/core": "^7.19.1",
-    "babel-preset-gatsby-package": "^2.23.0",
+    "babel-preset-gatsby-package": "^3.0.0",
     "cross-env": "^7.0.3",
-    "gatsby": "^4.23.0",
+    "gatsby": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -36,9 +36,9 @@
   "license": "AGPL",
   "main": "index.js",
   "peerDependencies": {
-    "gatsby": "^4.0.0",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "gatsby": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,6 @@
     "watch": "babel -w src --out-dir ."
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=18.0.0"
   }
 }

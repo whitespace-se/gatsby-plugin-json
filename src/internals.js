@@ -14,8 +14,9 @@ export const defaultOptions = {
         allMarkdownRemark(
           limit: 1000,
           sort: {
-            order: DESC,
-            fields: [frontmatter___date]
+            frontmatter: {
+              date: DESC
+            }
           }
         ) {
           edges {
